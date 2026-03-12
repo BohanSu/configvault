@@ -1,0 +1,8 @@
+{
+  "NODE_ENV": "string",
+  "DEBUG": "boolean",
+  "DB_HOST": "string",
+  "DB_PORT": "number",
+  "API_BASE_URL": "string",
+  "API_TIMEOUT": "number"
+}
