@@ -40,27 +40,3 @@ export function decryptAES256GCM(key: Buffer, encrypted: string): string {
 
   return plaintext;
 }
-
-export function encryptEnv(key: Buffer, env: Record<string, string>): Record<string, string> {
-  const result: Record<string, string> = {};
-
-  for (const [k, v] of Object.entries(env)) {
-    result[k] = encryptAES256GCM(key, v);
-  }
-
-  return result;
-}
-
-export function decryptEnv(key: Buffer, env: Record<string, string>): Record<string, string> {
-  const result: Record<string, string> = {};
-
-  for (const [k, v] of Object.entries(env)) {
-    if (v.startsWith('ENC(')) {
-      result[k] = decryptAES256GCM(key, v);
-    } else {
-      result[k] = v;
-    }
-  }
-
-  return result;
-}

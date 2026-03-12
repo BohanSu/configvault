@@ -7,9 +7,3 @@ export interface DiffResult {
   removed: string[];
   changed: Array<{ key: string; from: string; to: string }>;
 }
-
-export interface EncryptedValue {
-  iv: string;
-  tag: string;
-  ciphertext: string;
-}

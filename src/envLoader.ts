@@ -29,7 +29,3 @@ export function parseEnvContent(content: string): EnvMap {
 
   return env;
 }
-
-export function loadEnvFromPath(_path: string): Promise<EnvMap> {
-  return Promise.resolve(parseEnvContent(''));
-}
